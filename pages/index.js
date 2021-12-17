@@ -1,10 +1,11 @@
 import axios from "axios";
+import Head from "next/head";
 import { useState } from "react";
 import Card from "../components/Card";
 import Sidebar from "../components/Sidebar";
 export default function Home({ data, array }) {
   const [spaceXdata, setSpaceXdata] = useState([...data]);
-  console.log(array);
+  
 
   const submit = async (url) => {
     try {
@@ -15,15 +16,29 @@ export default function Home({ data, array }) {
     } catch (error) {}
   };
   return (
+    <>
+    <Head>
+    <title>space x</title>
+		<meta charset="utf-8"/>
+		<meta name="description" content="spacex site data filter "/>
+		<meta name="author" content="nitish sharma"/>
+		<meta name="keywords" content="space-x"/>
+ 
+		<meta property="og:title" content="" />
+		<meta property="og:type" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+ 
+		<link rel="canonical" href="" />
+    </Head>
     <div className="screen_container  max-height hidden">
       <span className="heading_text">SpaceX Launch Programs</span>
       <div className="main_container      ">
-        {/* sidebar */}
-        <Sidebar years={array} submit={submit} />
+           <Sidebar years={array} submit={submit} />
         <div className="flex-col">
           <div className=" scroll   card_grid">
-            {spaceXdata.map((item) => (
-              <Card item={item} />
+            {spaceXdata.map((item,key) => (
+              <Card key={key}  item={item} />
             ))}
           </div>
           <div className="full_width  padding">
@@ -33,8 +48,9 @@ export default function Home({ data, array }) {
         </div>
       </div>
 
-      {/* spaexData */}
+ 
     </div>
+    </>
   );
 }
 

@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 
-const Card = ({ item }) => {
+const Card = ({ item,key }) => {
     return (
-        <div className='card'>
+        <div key ={key} className='card'>
             <div className='imgDiv'>
-                <Image height={250} width={240} src={item.links.mission_patch} className='image' />
+                <Image alt='image' height={250} width={240} src={item.links.mission_patch} className='image' />
 
             </div>
 

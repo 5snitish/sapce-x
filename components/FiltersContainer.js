@@ -18,9 +18,9 @@ const FiltersContainer = ({ years, type, getUrl }) => {
       </div>
       {updatedyears !== undefined ? (
         <div className=" full_width  filter_container_grid ">
-          {updatedyears.map((item) => {
+          {updatedyears.map((item,key) => {
             return (
-              <YearContainer Values={Values} selected={selected} name={item} />
+              <YearContainer key={key} Values={Values} selected={selected} name={item} />
             );
           })}
         </div>
