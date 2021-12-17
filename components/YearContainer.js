@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
-const YearContainer = ({name,selected}) => {
-
-  const [value,setValue] = useState(false)
+const YearContainer = ({name,selected,Values}) => {
+ 
   return (
-    <div className={selected ? "background-active" : "background-inactive "}>
+    <div onClick={()=>Values(name)} className={selected==name ? "background-active" : "background-inactive "}>
       <span>{name} </span>
     </div>
   );

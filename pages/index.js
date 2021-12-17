@@ -7,7 +7,9 @@ export default function Home({ data,array }) {
   const [spaceXdata, setSpaceXdata] = useState([...data])
 console.log(array)
 
+const submit = async ()=>{
 
+}
   return (
     <div className="screen_container max-height hidden">
       <span className="heading_text"  >SpaceX Launch Programs</span>
@@ -15,12 +17,12 @@ console.log(array)
 
 
         {/* sidebar */}
-        <Sidebar years =  {array} />
+        <Sidebar years =  {array }  submit={submit}/>
         <div className=" scroll   card_grid">
 
           {spaceXdata.map((item) =>
           (
-            <Card item={item} />
+            <Card item={item}  />
 
 
           ))}
